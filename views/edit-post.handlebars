@@ -1,30 +1,26 @@
-<a href="/dashboard" class="go-back"> &larr; Back to dashboard</a>
+<section class="list-item">
+    <div class="list-item-header">
+        <p class="list-item-title">Edit Post</p>
+    </div>
 
-<article class="new-page">
-    <section class="edit-form-page">
-        <div class="form-heading">
-            <h2>
-                Edit Post
-            </h2>
+    <form class="edit-post-form">
+        <div class="content">
+            <label for="post-title">Title</label>
+            <br />
+            <textarea id="post-title" name="post-title">
+                {{post.title}}
+            </textarea>
         </div>
-        <div class="form-section">
-            <form class="edit-post-form">
-                <div class="post-title-section">
-                    <label for="post-title">Title</label>
-                    <input type="text" name="post-title" id="post-title" value="{{post.title}}" />
-                </div>
-                <div class="post-content">
-                    <label for="post-content">Content</label>
-                    <textarea class="entry-field" id="post-content" name="post-content">{{post.content}}</textarea>
-                </div>
-                <button type="submit">Update post</button>
-                <button type="button" class="delete-post-btn">Delete post</button>
-            </form>
+        <div class="content">
+            <label for="post-content">Content</label>
+            <br />
+            <textarea id="post-content" name="post-content">
+                {{post.content}}
+            </textarea>
         </div>
-    </section>
-</article>
+        <button id="update-btn" type="submit" class="btn">Update Post</button>
+        <button id="delete-btn" type="click" class="btn">Delete Post</button>
+    </form>
+</section>
 
-{{#if loggedIn}}
-<script src="/javascript/edit-post.js"></script>
-<script src="/javascript/delete-post.js"></script>
-{{/if}}
+<script src='/javascript/edit-post.js'></script>

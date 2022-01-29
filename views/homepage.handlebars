@@ -1,7 +1,13 @@
-<ul class="post-list">
+{{#if posts.length}}
+<section class="list-group">
     {{#each posts as |post|}}
-    <li>
+    <div>
         {{> post-info post }}
-    </li>
+    </div>
     {{/each}}
-</ul>
+</section>
+{{else}}
+<section>
+    <h2>No Posts Yet!</h2>
+</section>
+{{/if}}

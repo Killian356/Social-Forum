@@ -4,34 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Tech Forum</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>ocial Tech Forum</title>
 </head>
 
-<body>
-    <div class="wrapper">
-        <header>
-            <h1>
-                <a href="/">home</a>
-            </h1>
-            <nav>
-                {{#if loggedIn}}
-                <a href="/dashboard">dashboard</a>
-                <button id="logout" class="btn-no-style logout">logout</button>
-                {{else}}
-                <a href="/login">login</a>
-                {{/if}}
-            </nav>
-        </header>
-        <div class="site-row">
-            <div class="site-name">
-                <h1>SociaL Tech Forum</h1>
-            </div>
-        </div>
-        <main>
-            {{{ body }}}
-        </main>
-    </div>
+<body class="flex-column min-100-vh">
+    <header class="hero">
+        <nav class="flex-row justify-space-between">
+            <a href='/'>Home</a>
+            <a href='/dashboard'>Dashboard</a>
+            {{#if loggedIn}}
+            <button id='logout' class='btn-no-style'>Logout</button>
+            {{else}}
+            <a href='/login'>Login</a>
+            {{/if}}
+        </nav>
+        <h1 class="app-title">Social Tech Forum</h1>
+    </header>
+
+
+    <main>
+        {{{ body }}}
+    </main>
 
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
